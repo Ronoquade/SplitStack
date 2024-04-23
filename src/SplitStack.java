@@ -25,7 +25,7 @@ public class SplitStack {
             }
         }
 
-        // Adding the positive integers to the top of the stack
+        // Adding the non-negative integers to the top of the stack
         while (!nonNegativeStorage.isEmpty()) {
             output.push(nonNegativeStorage.pop());
         }
