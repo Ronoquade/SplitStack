@@ -12,8 +12,8 @@ public class SplitStack {
 
         Stack output = new Stack<Integer>();
 
-        // Auxiliary Storage for positive integers
-        Stack positiveStorage = new Stack<Integer>();
+        // Auxiliary Storage for non-negative integers
+        Stack nonNegativeStorage = new Stack<Integer>();
 
         // Sorting integers in each stack
         while ( !integers.isEmpty() ) {
@@ -21,13 +21,13 @@ public class SplitStack {
                 output.push(integers.pop());
             }
             else if (integers.peek() >= 0) {
-                positiveStorage.push(integers.pop());
+                nonNegativeStorage.push(integers.pop());
             }
         }
 
         // Adding the positive integers to the top of the stack
-        while (!positiveStorage.isEmpty()) {
-            output.push(positiveStorage.pop());
+        while (!nonNegativeStorage.isEmpty()) {
+            output.push(nonNegativeStorage.pop());
         }
         // Printing out the split stack
         System.out.println(output);
